@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>For Styles</title>
+    </head>
+    <body>
+        <h1>This is styles</h1>
+
+        {% for product in products %}
+        <h4>{{ product }}</h4>
+        {% endfor %}
+
+        {% for key, value in products.items %}
+        <h4>{{ key }} : {{ value }}</h4>
+        {% endfor %}
+    </body>
+</html>
