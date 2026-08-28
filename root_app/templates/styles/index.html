@@ -7,13 +7,21 @@
     </head>
     <body>
         <h1>This is styles</h1>
+        <table border="1">
+            <tr>
+                <th>Product Name</th>
+                <th>Product</th>
+            </tr>
 
-        {% for product in products %}
-        <h4>{{ product }}</h4>
-        {% endfor %}
+            <!-- template tag -->
+            {% for key, value in products.items %}
+            <tr>
+                <!-- filter tag -->
+                <td>{{ key|upper }}</td>
+                <td>{{ value|capfirst }}</td>
+            </tr>
+            {% endfor %}
+        </table>
 
-        {% for key, value in products.items %}
-        <h4>{{ key }} : {{ value }}</h4>
-        {% endfor %}
     </body>
 </html>
