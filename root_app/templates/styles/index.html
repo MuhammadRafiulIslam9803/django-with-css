@@ -10,6 +10,15 @@
             background-color: lightblue;
             text-align: center;
         }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-content: center;
+        }
+        .gap {
+            margin-top: 40px;
+        }
         table {
           margin: auto;
         }
@@ -21,66 +30,64 @@
    </style>
     <body>
         <h1>This is styles</h1>
-        <table border="1">
-            <tr>
-                <th>Product Name</th>
-                <th>Product</th>
-            </tr>
+        <div class="grid-container gap">
+            <div>
+                <h2>List of Products</h2>
+                <table border="1">
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Product</th>
+                    </tr>
 
-            <!-- template tag -->
-            {% for key, value in products.items %}
-            <tr>
-                <!-- filter tag -->
-                <td>{{ key|upper }}</td>
-                <td>{{ value|capfirst }}</td>
-            </tr>
-            {% endfor %}
-        </table>
-        <br>
-        <br>
-        <br>
+                    <!-- template tag -->
+                    {% for key, value in products.items %}
+                    <tr>
+                        <!-- filter tag -->
+                        <td>{{ key|upper }}</td>
+                        <td>{{ value|capfirst }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
 
-        <!-- table for students -->
-         <h3>List of Students with 10 by 10 </h3>
-        <table border="1">
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>City</th>
-                <th>Department</th>
-                <th>Semester</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>GPA</th>
-                <th>Status</th>
-            </tr>
+            <div>
+                <!-- table for students -->
+                <h2>List of Students with 10 by 10 </h2>
+                <table border="1">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>City</th>
+                        <th>Department</th>
+                        <th>Semester</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>GPA</th>
+                        <th>Status</th>
+                    </tr>
 
-            {% for student in students %}
-            <tr>
-                <td>{{ student.id }}</td>
-                <td>{{ student.name }}</td>
-                <td>{{ student.age }}</td>
-                <td>{{ student.city }}</td>
-                <td>{{ student.department }}</td>
-                <td>{{ student.semester }}</td>
-                <td>{{ student.email }}</td>
-                <td>{{ student.phone }}</td>
-                <td>{{ student.gpa }}</td>
-                <td>{{ student.status }}</td>
-            </tr>
-            {% endfor %}
-        </table>
+                    {% for student in students %}
+                    <tr>
+                        <td>{{ student.id }}</td>
+                        <td>{{ student.name }}</td>
+                        <td>{{ student.age }}</td>
+                        <td>{{ student.city }}</td>
+                        <td>{{ student.department }}</td>
+                        <td>{{ student.semester }}</td>
+                        <td>{{ student.email }}</td>
+                        <td>{{ student.phone }}</td>
+                        <td>{{ student.gpa }}</td>
+                        <td>{{ student.status }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        </div>
 
         <!-- for regitation form -->
-        <h3>Registration Form</h3>
+        <h3 class="gap">Registration Form</h3>
         <form>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name">
