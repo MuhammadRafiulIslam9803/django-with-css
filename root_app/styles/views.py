@@ -148,3 +148,8 @@ def bootStrap(request):
         request,
         'bootStrap/index.html',
     )
+def tailwind(request):
+    return render(
+        request,
+        'tailwind/tailwind.html',
+    )
