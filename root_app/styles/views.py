@@ -143,3 +143,8 @@ def index(request):
             'students': students
         }
     )
+def bootStrap(request):
+    return render(
+        request,
+        'bootStrap/index.html',
+    )
