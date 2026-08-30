@@ -1,8 +1,11 @@
 from django.shortcuts import render
 
-from . models import Student
+from . models import Student , Result
 
 # Create your views here.
 def collage(request):
     studentDetails = Student.objects.all()
-    return render(request, 'collage/student.html', {'studentDetails': studentDetails})
+    result = Result.objects.all()
+    return render(request, 'collage/student.html',
+                  {'studentDetails': studentDetails,
+                   'result': result})

@@ -9,4 +9,8 @@ class Student(models.Model):
     student_department = models.CharField(max_length=50)
     student_semester = models.IntegerField()
     student_phone = models.IntegerField()
-    
+
+class Result (models.Model):
+    student_name = models.CharField(max_length=50)
+    student_department = models.CharField(max_length=50)
+    student_cgpa = models.FloatField()
