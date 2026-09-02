@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>I am From the form </h1>
-    <form method="post">
+    <form method="POST">
         {% csrf_token %}
         {{ student_form.as_p }}
         <button type="submit">Submit</button>
