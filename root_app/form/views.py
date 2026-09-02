@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from . forms import StudentDetailsForm, StudentRegistrationForm
-from . models import StudentFormInfo
+from . models import StudentFormInfo , StudentDetailsInfo
 
 # Create your views here.
 def form(request):
@@ -30,7 +30,6 @@ def studentDetails (request):
         student_details_form = StudentDetailsForm(request.POST)
         if student_details_form.is_valid():
             
-            id = student_details_form.cleaned_data['id']
             name = student_details_form.cleaned_data['name']
             email = student_details_form.cleaned_data['email']
             department = student_details_form.cleaned_data['department']
@@ -38,8 +37,14 @@ def studentDetails (request):
             phone = student_details_form.cleaned_data['phone']
             
             # Save the form data to the model for table creation
-            print("Student Details:", id, name, email, department, semester, phone)
+            print("Student Details:",  name, email, department, semester, phone)
+            student_Details_info = StudentDetailsInfo(name=name, email=email, department=department, semester=semester, phone=phone)
+            student_Details_info.save()
+            
+            studentDetailsInfo = StudentDetailsInfo.objects.all()
+            
+            return render(request, 'form/StudentDetailsSuccess.html', {'studentDetailsInfo': studentDetailsInfo})
     else:
-        student_details_form = StudentDetailsForm(label_suffix=' =', initial={'id': 1, 'name': 'John Doe', 'email': 'default@email.com'})
+        student_details_form = StudentDetailsForm(label_suffix=' =', initial={'name': 'John Doe', 'email': 'default@email.com'})
             
     return render(request, 'form/studentDetails.html', {'student_details_form': student_details_form})

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Student Details </title>
+</head>
+<body>
+    <h1>Student Details Form Submitted Successfully!</h1>
+    {% if studentDetailsInfo %}
+        <ul>
+            {% for student in studentDetailsInfo %}
+                <li>Student:  {{ student.name }} - Email: {{ student.email }}</li>
+                <li>Department: {{ student.department }} - Semester: {{ student.semester }}</li>
+                <li>Phone: {{ student.phone }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
