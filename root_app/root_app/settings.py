@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'styles',
     'collage',
     'form',
+    'users',
 ]
 
 MIDDLEWARE = [

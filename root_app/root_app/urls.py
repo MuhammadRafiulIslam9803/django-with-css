@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('styles.urls')),
     path('cl/', include('collage.urls')),
     path('form/', include('form.urls')),
+    path('users/', include('users.urls')),
 ]
