@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'collage',
     'form',
     'users',
+    'relation',
 ]
 
 MIDDLEWARE = [
